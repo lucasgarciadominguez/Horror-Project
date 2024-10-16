@@ -47,73 +47,23 @@ jobs:
             platforms_str = ', '.join(platforms) if platforms else 'No disponible'
             short_text = data.get('short_text', 'Descripción no disponible')
 
-            readme_content = f"""# {title} - Terror & Puzzle Game
+            readme_content = f"""
+            # {title}
 
-Horror type of game inspired by the P.T Silent Hills.
+            ![Cover Image]({data.get('cover_url', '')})
 
-## <a href="https://youtu.be/vVJ0DhUESY4?si=snsCS6nh3vyk_vWx">Trailer Video on YouTube</a>
+            ## Descripción
+            {short_text}
 
-<img src="https://github.com/lucasgarciadominguez/Assets/blob/main/Captura4.png" width="800">
-<img src="https://github.com/lucasgarciadominguez/Assets/blob/main/Captura5.png" width="800">
+            **Plataformas soportadas**: {platforms_str}
 
-## Features
+            **Fecha de creación**: {created_at}
 
-* Inventario utilizando ScriptableObjects con foto, descripción y otras estadísticas.
-* Movimiento realista.
-* Examinador de objetos.
-* Iluminación con baking.
-* Minijuegos basados únicamente en la interfaz de usuario.
+            **Fecha de publicación**: {published_at}
 
-## Stats
+            [Jugar ahora]({game_url})
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Itch.io</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Views</td>
-      <td>+800</td>
-    </tr>
-    <tr>
-      <td>Downloads</td>
-      <td>+250</td>
-    </tr>
-  </tbody>
-</table>
-
-## Contact
-
-<table>
-  <thead>
-    <tr>
-      <th>Full Name</th>
-      <th>GitHub</th>
-      <th>LinkedIn</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Lucas Garcia</td>
-      <td><a href="https://github.com/lucasgarciadominguez">lucasgarciadominguez</a></td>
-      <td><a href="https://www.linkedin.com/in/lucas-garcia-dominguez/">Lucas Garcia Dominguez</a></td>
-    </tr>
-    <tr>
-      <td>Miguel Rodriguez</td>
-      <td><a href="https://github.com/waterproofcandlestudio">waterproofcandlestudio</a></td>
-      <td><a href="https://www.linkedin.com/in/miguel-rodriguez-gallego/">Miguel Rodriguez Gallego</a></td>
-    </tr>
-    <tr>
-      <td>Samuel Robinson</td>
-      <td></td>
-      <td><a href="https://www.linkedin.com/in/samuel-robinson-210232268/">Samuel Robinson</a></td>
-    </tr>
-  </tbody>
-</table>
-"""
+            """
 
             with open("README.md", "w") as readme_file:
                 readme_file.write(readme_content)
@@ -127,5 +77,5 @@ Horror type of game inspired by the P.T Silent Hills.
         git config --local user.name "GitHub Action"
         git add README.md
         git commit -m "Updated README with latest game data"
-        git push https://x-access-token:${{ secrets.MY_PAT_TOKEN }}@github.com/lucasgarciadominguez/Horror-Project.git HEAD:main
+        git push https://x-access-token:${{ secrets.MY_PAT_TOKEN }}@github.com/lucasgarciadominguez/Horror-Project.git HEAD:main 
 
