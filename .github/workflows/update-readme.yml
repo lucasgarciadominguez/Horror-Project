@@ -1,23 +1,4 @@
-este es el error extendido: Run git config --local user.email "action@github.com"
-  git config --local user.email "action@github.com"
-  git config --local user.name "GitHub Action"
-  git add README.md
-  git commit -m "Updated README with latest game data"
-  git push
-  shell: /usr/bin/bash -e {0}
-  env:
-    pythonLocation: /opt/hostedtoolcache/Python/3.12.7/x64
-    PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.7/x64/lib/pkgconfig
-    Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.7/x64
-    Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.7/x64
-    Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.7/x64
-    LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.7/x64/lib
-[main e2acd25] Updated README with latest game data
- 1 file changed, 17 insertions(+)
- create mode 100644 README.md
-remote: Permission to lucasgarciadominguez/Horror-Project.git denied to github-actions[bot].
-fatal: unable to access 'https://github.com/lucasgarciadominguez/Horror-Project/': The requested URL returned error: 403
-Error: Process completed with exit code 128. y este es el yaml que utiolicé: name: Update README with itch.io game data
+name: Update README with itch.io game data
 
 on:
   workflow_dispatch:  # Permite ejecutar manualmente el workflow desde GitHub
