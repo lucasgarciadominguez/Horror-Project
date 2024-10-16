@@ -50,9 +50,11 @@ jobs:
             readme_content = f"""
           # {title} - Terror & Puzzle Game
 
+          ## <a href="{game_url}"> Play now </a>
+
           ![Cover Image]({data.get('cover_url', '')})
 
-          ## Descripción
+          ## Description
           {short_text}
 
           **Supported Platforms**: {platforms_str}
@@ -125,8 +127,6 @@ jobs:
             </tbody>
           </table>
           </html>
-
-          [Play now]({game_url})
 
             """
 
