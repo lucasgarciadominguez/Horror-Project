@@ -1,9 +1,11 @@
 
   # Horror Project - Terror & Puzzle Game
 
+  ## <a href="https://lucasgarcia002.itch.io/horror-project"> Play now </a>
+
   ![Cover Image](https://img.itch.zone/aW1nLzEzMzc2Nzc4LnBuZw==/315x250%23c/saRSf%2F.png)
 
-  ## Descripción
+  ## Description
   Horror Project is a first-person psychological horror game inspired by P.T.
 
   **Supported Platforms**: Windows
@@ -76,7 +78,5 @@
     </tbody>
   </table>
   </html>
-
-  [Play now](https://lucasgarcia002.itch.io/horror-project)
 
     
