@@ -10,11 +10,11 @@ Horror type of game inspired by the P.T Silent Hills.
 
 ## Features
 
-  * -Inventary by ScriptableObjects with photo, description and other stats.
-  * -Realistic movement.
-  * -Object Examinator.
-  * -Lighting with baking.
-  * -Minigames based purely on UI.
+  * Inventary by ScriptableObjects with photo, description and other stats.
+  * Realistic movement.
+  * Object Examinator.
+  * Lighting with baking.
+  * Minigames based purely on UI.
 
 ## Stats
 
@@ -33,6 +33,35 @@ Horror type of game inspired by the P.T Silent Hills.
             <tr>
               <td>Downloads</td>
               <td>+250</td>
+            </tr>
+      </tbody>
+  </table>
+
+## Contact
+
+<table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>GitHub</th>
+          <th>LinkedIn</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr>
+              <td>Lucas Garcia</td>
+              <td><a href="https://github.com/lucasgarciadominguez">lucasgarciadominguez</a></td>
+              <td><a href="https://www.linkedin.com/in/lucas-garcia-dominguez/">Lucas Garcia Dominguez</a></td>
+            </tr>
+            <tr>
+              <td>Miguel Rodriguez</td>
+              <td><a href="https://github.com/waterproofcandlestudio">waterproofcandlestudio</a></td>
+              <td><a href="https://www.linkedin.com/in/miguel-rodriguez-gallego/">Miguel Rodriguez Gallego<a/></td>
+            </tr>
+            <tr>
+              <td>Samuel Robinson</td>
+              <td></td>
+              <td><a href="https://www.linkedin.com/in/samuel-robinson-210232268/">Samuel Robinson<a/></td>
             </tr>
       </tbody>
   </table>
