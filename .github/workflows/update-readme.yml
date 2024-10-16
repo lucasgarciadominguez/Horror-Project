@@ -1,0 +1,80 @@
+name: Update README with itch.io game data
+
+on:
+  workflow_dispatch:  # Permite ejecutar manualmente el workflow desde GitHub
+  schedule:
+    - cron: '0 0 * * *'  # Ejecuta el workflow todos los días a la medianoche (opcional)
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install requests
+
+    - name: Update README.md
+      env:
+        ITCH_IO_API_KEY: ${{ secrets.ITCH_IO_API_KEY }}  # Refiere al secreto aquí
+      run: |
+        python <<EOF
+        import requests
+
+        API_KEY = '${{ secrets.ITCH_IO_API_KEY }}'
+        GAME_ID = '2256465'
+
+        url = f'https://itch.io/api/1/{API_KEY}/game/{GAME_ID}'
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            data = response.json().get('game', {})
+            title = data.get('title', 'Título no disponible')
+            game_url = data.get('url', 'URL no disponible')
+            created_at = data.get('created_at', 'Fecha no disponible')
+            published_at = data.get('published_at', 'Fecha no disponible')
+            platforms = []
+            if data.get('p_windows', False):
+                platforms.append('Windows')
+            platforms_str = ', '.join(platforms) if platforms else 'No disponible'
+            short_text = data.get('short_text', 'Descripción no disponible')
+
+            readme_content = f"""
+            # {title}
+
+            ![Cover Image]({data.get('cover_url', '')})
+
+            ## Descripción
+            {short_text}
+
+            **Plataformas soportadas**: {platforms_str}
+
+            **Fecha de creación**: {created_at}
+
+            **Fecha de publicación**: {published_at}
+
+            [Jugar ahora]({game_url})
+
+            """
+
+            with open("README.md", "w") as readme_file:
+                readme_file.write(readme_content)
+        else:
+            print(f"Error al obtener datos del juego: {response.status_code}")
+        EOF
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git commit -m "Updated README with latest game data"
+        git push
