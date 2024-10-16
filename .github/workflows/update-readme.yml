@@ -48,20 +48,20 @@ jobs:
             short_text = data.get('short_text', 'Descripción no disponible')
 
             readme_content = f"""
-            # {title}
+          # {title}
 
-            ![Cover Image]({data.get('cover_url', '')})
+          ![Cover Image]({data.get('cover_url', '')})
 
-            ## Descripción
-            {short_text}
+          ## Descripción
+          {short_text}
 
-            **Plataformas soportadas**: {platforms_str}
+          **Plataformas soportadas**: {platforms_str}
 
-            **Fecha de creación**: {created_at}
+          **Fecha de creación**: {created_at}
 
-            **Fecha de publicación**: {published_at}
+          **Fecha de publicación**: {published_at}
 
-            [Jugar ahora]({game_url})
+          [Jugar ahora]({game_url})
 
             """
 
