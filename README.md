@@ -4,9 +4,9 @@ Horror type of game inspired by the P.T Silent Hills.
 
 ## <a href="https://youtu.be/vVJ0DhUESY4?si=snsCS6nh3vyk_vWx"> Trailer Video on YouTube </a>
 
-<img src="https://github.com/lucasgarciadominguez/Assets/blob/main/Captura4" width="800">
+<img src="https://github.com/lucasgarciadominguez/Assets/blob/main/Captura4.png" width="800">
 
-<img src="https://github.com/lucasgarciadominguez/Assets/blob/main/Captura5" width="800">
+<img src="https://github.com/lucasgarciadominguez/Assets/blob/main/Captura5.png" width="800">
 
 ## Features
 
