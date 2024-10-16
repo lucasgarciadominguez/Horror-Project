@@ -63,6 +63,14 @@ jobs:
 
             [Jugar ahora]({game_url})
 
+            ## Contact
+
+            | Full Name          | GitHub                                | LinkedIn                                      |
+            |--------------------|---------------------------------------|-----------------------------------------------|
+            | Lucas Garcia       | [lucasgarciadominguez](https://github.com/lucasgarciadominguez)       | [Lucas Garcia Dominguez](https://www.linkedin.com/in/lucas-garcia-dominguez/) |
+            | Miguel Rodriguez    | [waterproofcandlestudio](https://github.com/waterproofcandlestudio)   | [Miguel Rodriguez Gallego](https://www.linkedin.com/in/miguel-rodriguez-gallego/) |
+            | Samuel Robinson     | N/A                                   | [Samuel Robinson](https://www.linkedin.com/in/samuel-robinson-210232268/) |
+
             """
 
             with open("README.md", "w") as readme_file:
@@ -72,12 +80,10 @@ jobs:
         EOF
 
     - name: Commit changes
-      env:
-        MY_PAT_TOKEN: ${{ secrets.MY_PAT_TOKEN }}  # Usa tu token de acceso personal
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add README.md
         git commit -m "Updated README with latest game data"
-        git push https://x-access-token:${MY_PAT_TOKEN}@github.com/lucasgarciadominguez/Horror-Project.git HEAD:main
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/lucasgarciadominguez/Horror-Project.git HEAD:main
 
