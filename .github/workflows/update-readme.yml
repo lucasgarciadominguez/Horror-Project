@@ -77,5 +77,5 @@ jobs:
         git config --local user.name "GitHub Action"
         git add README.md
         git commit -m "Updated README with latest game data"
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/lucasgarciadominguez/Horror-Project.git HEAD:main
+        git push https://x-access-token:${{ secrets.MY_PAT_TOKEN }}@github.com/lucasgarciadominguez/Horror-Project.git HEAD:main
 
