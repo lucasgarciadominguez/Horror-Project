@@ -72,9 +72,12 @@ jobs:
         EOF
 
     - name: Commit changes
+      env:
+        MY_PAT_TOKEN: ${{ secrets.MY_PAT_TOKEN }}  # Usa tu token de acceso personal
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add README.md
         git commit -m "Updated README with latest game data"
-        git push
+        git push https://x-access-token:${MY_PAT_TOKEN}@github.com/lucasgarciadominguez/Horror-Project.git HEAD:main
+
