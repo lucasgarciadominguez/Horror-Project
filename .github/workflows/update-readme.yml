@@ -3,7 +3,7 @@ name: Update README with itch.io game data
 on:
   workflow_dispatch:  # Permite ejecutar manualmente el workflow desde GitHub
   schedule:
-    - cron: '0 0 * * *'  # Ejecuta el workflow todos los días a la medianoche (opcional)
+    - cron: '0 0 * * 1' #every monday of the week at midnight
 
 jobs:
   update-readme:
